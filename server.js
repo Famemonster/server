@@ -2,6 +2,7 @@ const fs = require('fs');
 const hbs = require('hbs');
 const express = require('express');
 
+const port = process.env.PORT || 80;
 const app = express();
 
 app.use((req, res, next) => {
@@ -42,6 +43,6 @@ app.get('/bad', (req, res) => {
 	});
 });
 
-app.listen(80, () => {
-	console.log('Server can be reached at http://localhost now.');
+app.listen(port, () => {
+	console.log(`Server is up on port ${port}`);
 });
